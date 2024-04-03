@@ -38,6 +38,7 @@ return new class extends Migration
             $table->string('usuario')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->string('penalidade_chegada')->nullable();
         });
     }
 

@@ -30,6 +30,10 @@ class MedicaoController extends Controller
 		$lista .= " peixe_5 , ";
 		$lista .= " penalidade_1 , ";
 		$lista .= " penalidade_2 , ";
+		$lista .= " penalidade_3 , ";
+		$lista .= " penalidade_4 , ";
+		$lista .= " penalidade_5 , ";
+		$lista .= " penalidade_chegada , ";
 		$lista .= " total , ";
 		$lista .= " data  ";
 		$lista .= " from medicao m  ";
@@ -52,6 +56,10 @@ class MedicaoController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -72,6 +80,10 @@ class MedicaoController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -92,6 +104,10 @@ class MedicaoController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -112,6 +128,10 @@ class MedicaoController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -132,6 +152,10 @@ class MedicaoController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -158,8 +182,8 @@ class MedicaoController extends Controller
 					$nome_equipe = $equipesPresenca[$i][2];
 
 					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null); " ;
+					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada) ";
+					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
 					
 					DB::insert($insert);
 				}
@@ -180,8 +204,8 @@ class MedicaoController extends Controller
 					$nome_equipe = $equipesPresenca[$i][2];
 
 					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '2', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null); " ;
+					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
+					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '2', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
 					
 					DB::insert($insert);
 				}
@@ -202,8 +226,8 @@ class MedicaoController extends Controller
 					$nome_equipe = $equipesPresenca[$i][2];
 
 					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null); " ;
+					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada) ";
+					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
 					
 					DB::insert($insert);
 				}
@@ -224,8 +248,8 @@ class MedicaoController extends Controller
 					$nome_equipe = $equipesPresenca[$i][2];
 
 					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null); " ;
+					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
+					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
 					
 					DB::insert($insert);
 				}
@@ -246,8 +270,8 @@ class MedicaoController extends Controller
 					$nome_equipe = $equipesPresenca[$i][2];
 
 					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null); " ;
+					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
+					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
 					
 					DB::insert($insert);
 				}
@@ -268,12 +292,56 @@ class MedicaoController extends Controller
 		$peixe_3 = floatval($request->peixe_3);
 		$peixe_4 = floatval($request->peixe_4);
 		$peixe_5 = floatval($request->peixe_5);
-		$penalidade_1 = floatval($request->penalidade_1);
+		$penalidade_1= floatval($request->penalidade_1);
+		$penalidade_2= floatval($request->penalidade_2);
+		$penalidade_3= floatval($request->penalidade_3);
+		$penalidade_4= floatval($request->penalidade_4);
+		$penalidade_5= floatval($request->penalidade_5);
+		$penalidade_chegada= floatval($request->penalidade_chegada);
 		$total = floatval($request->total);
 
-		$total_peixes = $peixe_1 + $peixe_2 + $peixe_3 + $peixe_4;
-		$total_penalidades = $penalidade_1;
-		$total_desempate = $total_peixes + $peixe_5;
+		$peixes = [
+			[
+				'peixe' => 1,
+				'tamanho' => $peixe_1,
+				'penalidade' => $penalidade_1
+			],
+			[
+				'peixe' => 2,
+				'tamanho' => $peixe_2,
+				'penalidade' => $penalidade_2
+			],
+			[
+				'peixe' => 3,
+				'tamanho' => $peixe_3,
+				'penalidade' => $penalidade_3
+			],
+			[
+				'peixe' => 4,
+				'tamanho' => $peixe_4,
+				'penalidade' => $penalidade_4
+			],
+			[
+				'peixe' => 5,
+				'tamanho' => $peixe_5,
+				'penalidade' => $penalidade_5
+			],
+		];
+
+		// Inicializa arrays para extração e ordenação
+		$tamanhos = [];
+
+		// Extrai os tamanhos dos peixes para um array separado
+		foreach ($peixes as $key => $peixe) {
+			$tamanhos[$key] = $peixe['tamanho'];
+		}
+
+		// Ordena os peixes com base nos tamanhos
+		array_multisort($tamanhos, SORT_ASC, $peixes);
+
+		$total_peixes = $peixes[1]['tamanho'] + $peixes[2]['tamanho'] + $peixes[3]['tamanho'] + $peixes[4]['tamanho'];
+		$total_penalidades = $penalidade_1 + $penalidade_2 + $penalidade_3 + $penalidade_4 + $penalidade_5 + $penalidade_chegada;
+		$total_desempate = $total_peixes + $peixes[0]['tamanho'];
 
 		$usuario = Auth::user();
 		
@@ -284,9 +352,14 @@ class MedicaoController extends Controller
 		$update .= " peixe_4 = ".$peixe_4.", ";
 		$update .= " peixe_5 = ".$peixe_5.", ";
 		$update .= " penalidade_1 = ".$penalidade_1.", ";
+		$update .= " penalidade_2 = ".$penalidade_2.", ";
+		$update .= " penalidade_3 = ".$penalidade_3.", ";
+		$update .= " penalidade_4 = ".$penalidade_4.", ";
+		$update .= " penalidade_5 = ".$penalidade_5.", ";
 		$update .= " total_peixes = ".$total_peixes.", ";
 		$update .= " total_penalidades = ".$total_penalidades.", ";
 		$update .= " total_desempate = ".$total_desempate.", ";
+		$update .= " penalidade_chegada = ".$penalidade_chegada.", ";
 		$update .= " total = ".$total.", ";
 		$update .= " `data` = NOW(), ";
 		$update .= " usuario = ".$usuario->id.", ";
@@ -299,4 +372,5 @@ class MedicaoController extends Controller
 		return  'Dados de medição gravados com sucesso!';
 
 	}
+	
 }

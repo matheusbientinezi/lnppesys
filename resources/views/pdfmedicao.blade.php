@@ -48,66 +48,69 @@
             <thead class="text-xs text-gray-700 uppercase">
                 <tr>
                     <th scope="col" class="	text-align: left;" width="100px" class="px-6 py-3">Peixe</th>
-                    <th scope="col" class="	text-align: right;" width="100px" class="px-6 py-3">Medidas</th>th>
+                    <th scope="col" class="	text-align: right;" width="100px" class="px-6 py-3">Med. | Pen.</th>th>
                 </tr>
             </thead>
             <tbody class="border-b dark:border-gray-700">
                 <tr>
                     <td>
-                        Peixe 1
+                        Peixe 1 (cm) {{ $menor_peixe_1 }}
                     </td>
                     <th>
-                        {{ $peixe_1 }}
+                        {{ $peixe_1  .'  |  '.$penalidade_1}}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 2
+                        Peixe 2 (cm) {{ $menor_peixe_2 }}
                     </td>
                     <th>
-                        {{ $peixe_2 }}
+                        {{ $peixe_2 .'  |  '.$penalidade_2 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 3
+                        Peixe 3 (cm) {{ $menor_peixe_3 }}
                     </td>
                     <th>
-                        {{ $peixe_3 }}
+                        {{ $peixe_3 .'  |  '.$penalidade_3 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 4
+                        Peixe 4 (cm) {{ $menor_peixe_4 }}
                     </td>
                     <th>
-                        {{ $peixe_4 }}
+                        {{ $peixe_4 .'  |  '.$penalidade_4 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 5 (Desempate)
+                        Peixe 5 (cm) {{ $menor_peixe_5 }}
                     </td>
                     <th>
-                        {{ $peixe_5 }}
+                        {{ $peixe_5 .'  |  '.$penalidade_5 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Penalidade
+                        Penalidade Chegada (cm)
                     </td>
                     <th>
-                        {{ $penalidade_1 }}
+                        {{ $penalidade_chegada }}
                     </th>
                 </tr>
                 <br>
                 <tr>
                     <td>
-                        <b>TOTAL</b>
+                        <b>TOTAL (cm)</b>
                     </td>
                     <th>
                         <b>{{ $total }} </b>
                     </th>
+                </tr>
+                <tr>
+                    <b> (*) : Menor Peixe </b>     
                 </tr>
 
 
@@ -169,70 +172,73 @@
 
         <hr>
 
-        <table class="w-full text-sm text-gray-500 dark:text-gray-400">
+        <table class="text-sm text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase">
                 <tr>
                     <th scope="col" class="	text-align: left;" width="100px" class="px-6 py-3">Peixe</th>
-                    <th scope="col" class="	text-align: right;" width="100px" class="px-6 py-3">Medidas</th>th>
+                    <th scope="col" class="	text-align: right;" width="100px" class="px-6 py-3">Med. | Pen.</th>th>
                 </tr>
             </thead>
             <tbody class="border-b dark:border-gray-700">
                 <tr>
                     <td>
-                        Peixe 1
+                        Peixe 1 (cm) {{ $menor_peixe_1 }}
                     </td>
                     <th>
-                        {{ $peixe_2 }}
+                        {{ $peixe_1  .'  |  '.$penalidade_1}}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 2
+                        Peixe 2 (cm) {{ $menor_peixe_2 }}
                     </td>
                     <th>
-                        {{ $peixe_2 }}
+                        {{ $peixe_2 .'  |  '.$penalidade_2 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 3
+                        Peixe 3 (cm) {{ $menor_peixe_3 }}
                     </td>
                     <th>
-                        {{ $peixe_3 }}
+                        {{ $peixe_3 .'  |  '.$penalidade_3 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 4
+                        Peixe 4 (cm) {{ $menor_peixe_4 }}
                     </td>
                     <th>
-                        {{ $peixe_4 }}
+                        {{ $peixe_4 .'  |  '.$penalidade_4 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Peixe 5 (Desempate)
+                        Peixe 5 (cm) {{ $menor_peixe_5 }}
                     </td>
                     <th>
-                        {{ $peixe_5 }}
+                        {{ $peixe_5 .'  |  '.$penalidade_5 }}
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        Penalidade
+                        Penalidade Chegada (cm)
                     </td>
                     <th>
-                        {{ $penalidade_1 }}
+                        {{ $penalidade_chegada }}
                     </th>
                 </tr>
                 <br>
                 <tr>
                     <td>
-                        <b>TOTAL</b>
+                        <b>TOTAL (cm)</b>
                     </td>
                     <th>
                         <b>{{ $total }} </b>
                     </th>
+                </tr>
+                <tr>
+                    <b> (*) : Menor Peixe </b>     
                 </tr>
 
 
