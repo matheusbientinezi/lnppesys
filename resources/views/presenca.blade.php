@@ -146,8 +146,8 @@
                                                             <input 
                                                                 name="{{$key}}[]" type="checkbox"
                                                                 {{ $list2['presenca'] }}
-                                                                @if ($list2['presenca'] == 'checked') class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-																	disabled
+                                                                @if ($list2['presenca'] == 'checked') 
+                                                                class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@else
 																class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@endif
@@ -214,8 +214,8 @@
                                                             <input 
                                                                 name="{{$key}}[]" type="checkbox"
                                                                 {{ $list3['presenca'] }}
-                                                                @if ($list3['presenca'] == 'checked') class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-																	disabled
+                                                                @if ($list3['presenca'] == 'checked') 
+                                                                class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@else
 																class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@endif
@@ -282,8 +282,8 @@
                                                             <input 
                                                                 name="{{$key}}[]" type="checkbox"
                                                                 {{ $list4['presenca'] }}
-                                                                @if ($list4['presenca'] == 'checked') class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-																	disabled
+                                                                @if ($list4['presenca'] == 'checked') 
+                                                                class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@else
 																class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@endif
@@ -350,8 +350,8 @@
                                                             <input 
                                                                 name="{{$key}}[]" type="checkbox"
                                                                 {{ $list5['presenca'] }}
-                                                                @if ($list5['presenca'] == 'checked') class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-																	disabled
+                                                                @if ($list5['presenca'] == 'checked') 
+                                                                class="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@else
 																class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 																@endif
