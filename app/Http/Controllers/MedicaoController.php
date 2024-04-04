@@ -23,6 +23,7 @@ class MedicaoController extends Controller
 		$lista .= " numero_equipe , ";
 		$lista .= " nome_equipe , ";
 		$lista .= " etapa , ";
+		$lista .= " presenca , ";
 		$lista .= " peixe_1 , ";
 		$lista .= " peixe_2 , ";
 		$lista .= " peixe_3 , ";
@@ -41,7 +42,7 @@ class MedicaoController extends Controller
 		$result = $connection->select($lista);
 
 		foreach ($result as $row) {
-			if ($row->etapa == '1') {
+			if ($row->etapa == '1' && $row->presenca == "S") {
 				array_push(
 					$etapa1,
 					[
@@ -65,7 +66,7 @@ class MedicaoController extends Controller
 					]
 				);
 			}
-			if ($row->etapa == '2') {
+			if ($row->etapa == '2' && $row->presenca == "S") {
 				array_push(
 					$etapa2, 
 					[
@@ -89,7 +90,7 @@ class MedicaoController extends Controller
 					]
 				);
 			}
-			if ($row->etapa == '3') {
+			if ($row->etapa == '3' && $row->presenca == "S") {
 				array_push(
 					$etapa3, 
 					[
@@ -113,7 +114,7 @@ class MedicaoController extends Controller
 					]
 				);
 			}
-			if ($row->etapa == '4') {
+			if ($row->etapa == '4' && $row->presenca == "S") {
 				array_push(
 					$etapa4, 
 					[
@@ -137,7 +138,7 @@ class MedicaoController extends Controller
 					]
 				);
 			}
-			if ($row->etapa == '5') {
+			if ($row->etapa == '5' && $row->presenca == "S") {
 				array_push(
 					$etapa5, 
 					[
@@ -177,17 +178,23 @@ class MedicaoController extends Controller
 		$equipesPresenca = $request->all();
 		for ($i = 0; $i < count($equipesPresenca)-1; $i++) {
 			if(count($equipesPresenca[$i]) > 2){
-				if($equipesPresenca[$i][0] == 'on' && $equipesPresenca[$i][0] != '' ){
-					$numero_equipe = $equipesPresenca[$i][1];
-					$nome_equipe = $equipesPresenca[$i][2];
+				$numero_equipe = $equipesPresenca[$i][1];
+				$nome_equipe = $equipesPresenca[$i][2];
+				$presenca = "S";
+			}else{
+				$numero_equipe = $equipesPresenca[$i][0];
+				$nome_equipe = $equipesPresenca[$i][1];
+				$presenca = "N";
+			}
 
-					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
-					
-					DB::insert($insert);
-				}
-			};
+			if($equipesPresenca[$i][0] != '' ){
+				$insert = ' INSERT INTO medicao ';
+				$insert .= ' (id, numero_equipe, nome_equipe, etapa, presenca, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, penalidade_chegada, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ';
+				$insert .= ' VALUES(0, "'.$numero_equipe.'", "'.$nome_equipe.'", "1", "'.$presenca.'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", NOW(), "", NOW(), null, null) ';
+				$insert .= ' ON DUPLICATE KEY UPDATE ';
+				$insert .= ' presenca = "'.$presenca.'", updated_at = NOW(); ';
+				DB::insert($insert);
+			}
 		}
 
 		return redirect()
@@ -199,17 +206,23 @@ class MedicaoController extends Controller
 		$equipesPresenca = $request->all();
 		for ($i = 0; $i < count($equipesPresenca)-1; $i++) {
 			if(count($equipesPresenca[$i]) > 2){
-				if($equipesPresenca[$i][0] == 'on' && $equipesPresenca[$i][0] != '' ){
-					$numero_equipe = $equipesPresenca[$i][1];
-					$nome_equipe = $equipesPresenca[$i][2];
+				$numero_equipe = $equipesPresenca[$i][1];
+				$nome_equipe = $equipesPresenca[$i][2];
+				$presenca = "S";
+			}else{
+				$numero_equipe = $equipesPresenca[$i][0];
+				$nome_equipe = $equipesPresenca[$i][1];
+				$presenca = "N";
+			}
 
-					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '2', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
-					
-					DB::insert($insert);
-				}
-			};
+			if($equipesPresenca[$i][0] != '' ){
+				$insert = ' INSERT INTO medicao ';
+				$insert .= ' (id, numero_equipe, nome_equipe, etapa, presenca, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, penalidade_chegada, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ';
+				$insert .= ' VALUES(0, "'.$numero_equipe.'", "'.$nome_equipe.'", "2", "'.$presenca.'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", NOW(), "", NOW(), null, null) ';
+				$insert .= ' ON DUPLICATE KEY UPDATE ';
+				$insert .= ' presenca = "'.$presenca.'", updated_at = NOW(); ';
+				DB::insert($insert);
+			}
 		}
 
 		return redirect()
@@ -221,17 +234,23 @@ class MedicaoController extends Controller
 		$equipesPresenca = $request->all();
 		for ($i = 0; $i < count($equipesPresenca)-1; $i++) {
 			if(count($equipesPresenca[$i]) > 2){
-				if($equipesPresenca[$i][0] == 'on' && $equipesPresenca[$i][0] != '' ){
-					$numero_equipe = $equipesPresenca[$i][1];
-					$nome_equipe = $equipesPresenca[$i][2];
+				$numero_equipe = $equipesPresenca[$i][1];
+				$nome_equipe = $equipesPresenca[$i][2];
+				$presenca = "S";
+			}else{
+				$numero_equipe = $equipesPresenca[$i][0];
+				$nome_equipe = $equipesPresenca[$i][1];
+				$presenca = "N";
+			}
 
-					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
-					
-					DB::insert($insert);
-				}
-			};
+			if($equipesPresenca[$i][0] != '' ){
+				$insert = ' INSERT INTO medicao ';
+				$insert .= ' (id, numero_equipe, nome_equipe, etapa, presenca, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, penalidade_chegada, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ';
+				$insert .= ' VALUES(0, "'.$numero_equipe.'", "'.$nome_equipe.'", "3", "'.$presenca.'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", NOW(), "", NOW(), null, null) ';
+				$insert .= ' ON DUPLICATE KEY UPDATE ';
+				$insert .= ' presenca = "'.$presenca.'", updated_at = NOW(); ';
+				DB::insert($insert);
+			}
 		}
 
 		return redirect()
@@ -243,17 +262,23 @@ class MedicaoController extends Controller
 		$equipesPresenca = $request->all();
 		for ($i = 0; $i < count($equipesPresenca)-1; $i++) {
 			if(count($equipesPresenca[$i]) > 2){
-				if($equipesPresenca[$i][0] == 'on' && $equipesPresenca[$i][0] != '' ){
-					$numero_equipe = $equipesPresenca[$i][1];
-					$nome_equipe = $equipesPresenca[$i][2];
+				$numero_equipe = $equipesPresenca[$i][1];
+				$nome_equipe = $equipesPresenca[$i][2];
+				$presenca = "S";
+			}else{
+				$numero_equipe = $equipesPresenca[$i][0];
+				$nome_equipe = $equipesPresenca[$i][1];
+				$presenca = "N";
+			}
 
-					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
-					
-					DB::insert($insert);
-				}
-			};
+			if($equipesPresenca[$i][0] != '' ){
+				$insert = ' INSERT INTO medicao ';
+				$insert .= ' (id, numero_equipe, nome_equipe, etapa, presenca, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, penalidade_chegada, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ';
+				$insert .= ' VALUES(0, "'.$numero_equipe.'", "'.$nome_equipe.'", "4", "'.$presenca.'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", NOW(), "", NOW(), null, null) ';
+				$insert .= ' ON DUPLICATE KEY UPDATE ';
+				$insert .= ' presenca = "'.$presenca.'", updated_at = NOW(); ';
+				DB::insert($insert);
+			}
 		}
 
 		return redirect()
@@ -265,17 +290,23 @@ class MedicaoController extends Controller
 		$equipesPresenca = $request->all();
 		for ($i = 0; $i < count($equipesPresenca)-1; $i++) {
 			if(count($equipesPresenca[$i]) > 2){
-				if($equipesPresenca[$i][0] == 'on' && $equipesPresenca[$i][0] != '' ){
-					$numero_equipe = $equipesPresenca[$i][1];
-					$nome_equipe = $equipesPresenca[$i][2];
+				$numero_equipe = $equipesPresenca[$i][1];
+				$nome_equipe = $equipesPresenca[$i][2];
+				$presenca = "S";
+			}else{
+				$numero_equipe = $equipesPresenca[$i][0];
+				$nome_equipe = $equipesPresenca[$i][1];
+				$presenca = "N";
+			}
 
-					$insert =  " INSERT INTO medicao ";
-					$insert .= " (id, numero_equipe, nome_equipe, etapa, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at, penalidade_chegada ) ";
-					$insert .= " VALUES(0, '".$numero_equipe."', '".$nome_equipe."', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NOW(), '', NOW(), null, null, ''); " ;
-					
-					DB::insert($insert);
-				}
-			};
+			if($equipesPresenca[$i][0] != '' ){
+				$insert = ' INSERT INTO medicao ';
+				$insert .= ' (id, numero_equipe, nome_equipe, etapa, presenca, peixe_1, peixe_2, peixe_3, peixe_4, peixe_5, peixe_6, peixe_7, peixe_8, peixe_9, penalidade_1, penalidade_2, penalidade_3, penalidade_4, penalidade_5, total_peixes, penalidade_chegada, total_penalidades, total, total_desempate, `data`, usuario, created_at, updated_at, deleted_at) ';
+				$insert .= ' VALUES(0, "'.$numero_equipe.'", "'.$nome_equipe.'", "5", "'.$presenca.'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", NOW(), "", NOW(), null, null) ';
+				$insert .= ' ON DUPLICATE KEY UPDATE ';
+				$insert .= ' presenca = "'.$presenca.'", updated_at = NOW(); ';
+				DB::insert($insert);
+			}
 		}
 
 		return redirect()

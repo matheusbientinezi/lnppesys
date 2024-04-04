@@ -318,7 +318,7 @@
                                                                         </div>
                                                                         <div>
                                                                             <label
-                                                                                for= "penalidade_peixe_2_{{ $list1['id'] }}"
+                                                                                for= "penalidade_peixe_2_{{ $list2['id'] }}"
                                                                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Penalidade
                                                                                 Peixe 2 ( cm )</label>
                                                                             <input type="number"

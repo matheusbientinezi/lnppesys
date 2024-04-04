@@ -39,7 +39,7 @@ class ListaPresencaController extends Controller
         foreach ($result as $row) {            
             if($row->order_item_name == "Etapa - 1"){
                 foreach($resultMedicao as $key => $value) {
-                    if($row->numero_equipe == $value->numero_equipe
+                    if($row->numero_equipe == $value->numero_equipe && $value->presenca == 'S'
                         && $value->etapa == '1'
                     ) {
                         $row->presenca = 'checked';
@@ -50,7 +50,7 @@ class ListaPresencaController extends Controller
             }
             if($row->order_item_name == "Etapa - 2"){
                 foreach($resultMedicao as $key => $value) {
-                    if($row->numero_equipe == $value->numero_equipe
+                    if($row->numero_equipe == $value->numero_equipe && $value->presenca == 'S'
                         && $value->etapa == '2'
                     ) {
                         $row->presenca = 'checked';
@@ -61,7 +61,7 @@ class ListaPresencaController extends Controller
             }
             if($row->order_item_name == "Etapa - 3"){
                 foreach($resultMedicao as $key => $value) {
-                    if($row->numero_equipe == $value->numero_equipe
+                    if($row->numero_equipe == $value->numero_equipe && $value->presenca == 'S'
                         && $value->etapa == '3'
                     ) {
                         $row->presenca = 'checked';
@@ -72,7 +72,7 @@ class ListaPresencaController extends Controller
             }
             if($row->order_item_name == "Etapa - 4"){
                 foreach($resultMedicao as $key => $value) {
-                    if($row->numero_equipe == $value->numero_equipe
+                    if($row->numero_equipe == $value->numero_equipe && $value->presenca == 'S'
                         && $value->etapa == '4'
                     ) {
                         $row->presenca = 'checked';
@@ -83,7 +83,7 @@ class ListaPresencaController extends Controller
             }
             if($row->order_item_name == "Etapa - 5"){
                 foreach($resultMedicao as $key => $value) {
-                    if($row->numero_equipe == $value->numero_equipe
+                    if($row->numero_equipe == $value->numero_equipe && $value->presenca == 'S'
                         && $value->etapa == '5'
                     ) {
                         $row->presenca = 'checked';

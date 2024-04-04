@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('numero_equipe');
             $table->string('nome_equipe');
             $table->string('etapa');
+            $table->string('presenca')->nullable();
             $table->string('peixe_1')->nullable();
             $table->string('peixe_2')->nullable();
             $table->string('peixe_3')->nullable();
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->string('penalidade_4')->nullable();
             $table->string('penalidade_5')->nullable();
             $table->string('total_peixes')->nullable();
+            $table->string('penalidade_chegada')->nullable();
             $table->string('total_penalidades')->nullable();
             $table->string('total')->nullable();
             $table->string('total_desempate')->nullable();
@@ -38,7 +40,6 @@ return new class extends Migration
             $table->string('usuario')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->string('penalidade_chegada')->nullable();
         });
     }
 
