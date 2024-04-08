@@ -56,6 +56,10 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
+                        <x-responsive-nav-link :href="route('registrar')">
+                            {{ __('Registrar') }}
+                        </x-responsive-nav-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
