@@ -29,40 +29,45 @@ class PdfController extends Controller
 			[
 				'peixe' => 1,
 				'tamanho' => $peixe_1,
+				'classificacao' => ($peixe_1 - $penalidade_1),
 				'penalidade' => $penalidade_1
 			],
 			[
 				'peixe' => 2,
 				'tamanho' => $peixe_2,
+				'classificacao' => ($peixe_2 - $penalidade_2),
 				'penalidade' => $penalidade_2
 			],
 			[
 				'peixe' => 3,
 				'tamanho' => $peixe_3,
+				'classificacao' => ($peixe_3 - $penalidade_3),
 				'penalidade' => $penalidade_3
 			],
 			[
 				'peixe' => 4,
 				'tamanho' => $peixe_4,
+				'classificacao' => ($peixe_4 - $penalidade_4),
 				'penalidade' => $penalidade_4
 			],
 			[
 				'peixe' => 5,
 				'tamanho' => $peixe_5,
+				'classificacao' => ($peixe_5 - $penalidade_5),
 				'penalidade' => $penalidade_5
 			],
 		];
 
 		// Inicializa arrays para extração e ordenação
-		$tamanhos = [];
+		$classificacao = [];
 
 		// Extrai os tamanhos dos peixes para um array separado
 		foreach ($peixes as $key => $peixe) {
-			$tamanhos[$key] = $peixe['tamanho'];
+			$classificacao[$key] = $peixe['classificacao'];
 		}
 
 		// Ordena os peixes com base nos tamanhos
-		array_multisort($tamanhos, SORT_ASC, $peixes);
+		array_multisort($classificacao, SORT_ASC, $peixes);
 
         $peixes[0]['menor_peixe'] = '(*)';
         $peixes[1]['menor_peixe'] = '';

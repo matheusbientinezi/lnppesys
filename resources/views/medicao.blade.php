@@ -1246,23 +1246,23 @@
 			var peixes = [ 
 				{
 					'peixe': 1,
-					'valor': peixe_1,
+					'valor': (peixe_1 - penalidade_1),
 				},
 				{
 					'peixe': 2,
-					'valor': peixe_2,
+					'valor': (peixe_2 - penalidade_2),
 				},
 				{
 					'peixe': 3,
-					'valor': peixe_3,
+					'valor': (peixe_3 - penalidade_3),
 				},
 				{
 					'peixe': 4,
-					'valor': peixe_4,
+					'valor': (peixe_4 - penalidade_4),
 				},
 				{
 					'peixe': 5,
-					'valor': peixe_5,
+					'valor': (peixe_5 - penalidade_5),
 				},
 		
 			];

@@ -33,14 +33,16 @@
                                         <thead
                                             class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3" width="10px">Posição</th>
-                                                <th scope="col" class="px-6 py-3">Nº Equipe</th>    
-                                                <th scope="col" class="px-6 py-3">Equipe</th>
-                                                <th scope="col" class="px-6 py-3">1º Peixe</th>
-                                                <th scope="col" class="px-6 py-3">2º Peixe</th>
-                                                <th scope="col" class="px-6 py-3">3º Peixe</th>
-                                                <th scope="col" class="px-6 py-3">4º Peixe</th>
-                                                <th scope="col" class="px-6 py-3">Total</th>
+                                                <th scope="col" class="px-3 py-2" width="10px">Posição</th>
+                                                <th scope="col" class="px-3 py-2">Nº Equipe</th>    
+                                                <th scope="col" class="px-3 py-2">Equipe</th>
+                                                <th scope="col" class="px-3 py-2">1º Peixe</th>
+                                                <th scope="col" class="px-3 py-2">2º Peixe</th>
+                                                <th scope="col" class="px-3 py-2">3º Peixe</th>
+                                                <th scope="col" class="px-3 py-2">4º Peixe</th>
+                                                <th scope="col" class="px-3 py-2">5º Peixe</th>
+                                                <th scope="col" class="px-3 py-2">Penalidade</th>
+                                                <th scope="col" class="px-3 py-2">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -60,11 +62,13 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="px-6 py-4">{{ $list1['peixe_1'] }}</td>
-                                                    <td class="px-6 py-4">{{ $list1['peixe_2'] }}</td>
-                                                    <td class="px-6 py-4">{{ $list1['peixe_3'] }}</td>
-                                                    <td class="px-6 py-4">{{ $list1['peixe_4'] }}</td>
-                                                    <td class="px-6 py-4">{{ $list1['total'] }}</td>
+                                                    <td class="px-3 py-2">T: {{ $list1['peixe_1'] }} <p>P: {{ $list1['penalidade_1'] }} </p></td>
+                                                    <td class="px-3 py-2">T: {{ $list1['peixe_2'] }} <p>P: {{ $list1['penalidade_2'] }} </p></td>
+                                                    <td class="px-3 py-2">T: {{ $list1['peixe_3'] }} <p>P: {{ $list1['penalidade_3'] }} </p></td>
+                                                    <td class="px-3 py-2">T: {{ $list1['peixe_4'] }} <p>P: {{ $list1['penalidade_4'] }} </p></td>
+                                                    <td class="px-3 py-2">T: {{ $list1['peixe_5'] }} <p>P: {{ $list1['penalidade_5'] }} </p></td>
+                                                    <td class="px-3 py-2"> {{ $list1['penalidade_chegada'] }}</td>
+                                                    <td class="px-3 py-2"> {{ $list1['total'] }}</td>
                                                     
                                                 </tr>
                                             @endforeach

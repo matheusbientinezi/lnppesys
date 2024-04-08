@@ -29,6 +29,10 @@ class RankingPublicController extends Controller
 		$lista .= " CAST(peixe_5 + 0 AS DECIMAL(12,2)) as peixe_5 , ";
 		$lista .= " CAST(penalidade_1 + 0 AS DECIMAL(12,2)) as penalidade_1 , ";
 		$lista .= " CAST(penalidade_2 + 0 AS DECIMAL(12,2)) as penalidade_2 , ";
+		$lista .= " CAST(penalidade_3 + 0 AS DECIMAL(12,2)) as penalidade_3 , ";
+		$lista .= " CAST(penalidade_4 + 0 AS DECIMAL(12,2)) as penalidade_4 , ";
+		$lista .= " CAST(penalidade_5 + 0 AS DECIMAL(12,2)) as penalidade_5 , ";
+		$lista .= " CAST(penalidade_chegada + 0 AS DECIMAL(12,2)) as penalidade_chegada , ";
 		$lista .= " CAST(total + 0 AS DECIMAL(12,2)) as total , ";
         $lista .= " CAST(total_desempate + 0 AS DECIMAL(12,2)) as total_desempate , ";
 		$lista .= " data  ";
@@ -56,6 +60,10 @@ class RankingPublicController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
                         "total_desempate" => $row->total_desempate,
 						"data" => $row->data
@@ -67,7 +75,7 @@ class RankingPublicController extends Controller
 					$etapa2, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key,
+                        "posicao" => $key+1,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -78,7 +86,12 @@ class RankingPublicController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
+                        "total_desempate" => $row->total_desempate,
 						"data" => $row->data
 					]
 				);
@@ -88,7 +101,7 @@ class RankingPublicController extends Controller
 					$etapa3, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key,
+                        "posicao" => $key+1,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -99,7 +112,12 @@ class RankingPublicController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
+                        "total_desempate" => $row->total_desempate,
 						"data" => $row->data
 					]
 				);
@@ -109,7 +127,7 @@ class RankingPublicController extends Controller
 					$etapa4, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key,
+                        "posicao" => $key+1,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -120,7 +138,12 @@ class RankingPublicController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
+                        "total_desempate" => $row->total_desempate,
 						"data" => $row->data
 					]
 				);
@@ -130,7 +153,7 @@ class RankingPublicController extends Controller
 					$etapa5, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key,
+                        "posicao" => $key+1,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -141,7 +164,12 @@ class RankingPublicController extends Controller
 						"peixe_5" => $row->peixe_5,
 						"penalidade_1" => $row->penalidade_1,
 						"penalidade_2" => $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada,
 						"total" => $row->total,
+                        "total_desempate" => $row->total_desempate,
 						"data" => $row->data
 					]
 				);
