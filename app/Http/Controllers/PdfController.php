@@ -98,7 +98,7 @@ class PdfController extends Controller
         $menor_peixe_4 = $peixes[3]["menor_peixe"];
         $menor_peixe_5 = $peixes[4]["menor_peixe"];
         
-        $customPaper =(array(0,0,204,1300));
+        $customPaper =(array(0,0,204,1000));
         $pdf = pdf::loadView("pdfmedicao", 
             compact(
                 'equipe', 

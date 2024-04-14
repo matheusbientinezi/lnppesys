@@ -15,6 +15,12 @@ class RankingPublicController extends Controller
 		$etapa4 = [];
 		$etapa5 = [];
 
+		$etapa1_maior_peixe = [];
+		$etapa2_maior_peixe = [];
+		$etapa3_maior_peixe = [];
+		$etapa4_maior_peixe = [];
+		$etapa5_maior_peixe = [];
+
 		$connection = DB::connection('mysql');
 		$lista = " select  ";
 		$lista .= " id, ";
@@ -27,6 +33,12 @@ class RankingPublicController extends Controller
 		$lista .= " CAST(peixe_3 + 0 AS DECIMAL(12,2)) as peixe_3 , ";
 		$lista .= " CAST(peixe_4 + 0 AS DECIMAL(12,2)) as peixe_4 , ";
 		$lista .= " CAST(peixe_5 + 0 AS DECIMAL(12,2)) as peixe_5 , ";
+		
+		$lista .= " CAST(peixe_6 + 0 AS DECIMAL(12,2)) as desempate_1 , ";
+		$lista .= " CAST(peixe_7 + 0 AS DECIMAL(12,2)) as desempate_2 , ";
+		$lista .= " CAST(peixe_8 + 0 AS DECIMAL(12,2)) as desempate_3 , ";
+		$lista .= " CAST(peixe_9 + 0 AS DECIMAL(12,2)) as desempate_4 , ";
+
 		$lista .= " CAST(penalidade_1 + 0 AS DECIMAL(12,2)) as penalidade_1 , ";
 		$lista .= " CAST(penalidade_2 + 0 AS DECIMAL(12,2)) as penalidade_2 , ";
 		$lista .= " CAST(penalidade_3 + 0 AS DECIMAL(12,2)) as penalidade_3 , ";
@@ -39,7 +51,7 @@ class RankingPublicController extends Controller
 		$lista .= " from medicao m  ";
         $lista .= " where  ";
         $lista .= " total is not null ";
-        $lista .= " Order by total DESC, peixe_5 DESC ";
+        $lista .= " Order by total DESC, desempate_1 DESC, desempate_2 DESC, desempate_3 DESC, desempate_4 DESC  ";
 
 		$result = $connection->select($lista);
 
@@ -69,6 +81,7 @@ class RankingPublicController extends Controller
 						"data" => $row->data
 					]
 				);
+				
 			}
 			if ($row->etapa == '2') {
 				array_push(
@@ -176,12 +189,60 @@ class RankingPublicController extends Controller
 			}
 		};
 
-		return view('rankingpublic', [
+		//etapa 1
+		$connection = DB::connection('mysql');
+		$maior  = " select  ";
+		$maior .= " GREATEST (m.peixe_1, m.peixe_2, m.peixe_3, m.peixe_4, m.peixe_5) as maior_peixe,   m.numero_equipe, m.nome_equipe   ";
+		$maior .= " from medicao m where m.etapa = '1'  order by maior_peixe DESC limit 1 ";
+
+		$etapa1_maior_peixe = $connection->select($maior);
+
+		//etapa 2
+		$connection = DB::connection('mysql');
+		$maior  = " select  ";
+		$maior .= " GREATEST (m.peixe_1, m.peixe_2, m.peixe_3, m.peixe_4, m.peixe_5) as maior_peixe,   m.numero_equipe, m.nome_equipe   ";
+		$maior .= " from medicao m where m.etapa = '2'  order by maior_peixe DESC limit 1 ";
+
+		$etapa2_maior_peixe = $connection->select($maior);
+
+		//etapa 3
+		$connection = DB::connection('mysql');
+		$maior  = " select  ";
+		$maior .= " GREATEST (m.peixe_1, m.peixe_2, m.peixe_3, m.peixe_4, m.peixe_5) as maior_peixe,   m.numero_equipe, m.nome_equipe   ";
+		$maior .= " from medicao m where m.etapa = '3'  order by maior_peixe DESC limit 1 ";
+
+		$etapa3_maior_peixe = $connection->select($maior);
+
+		//etapa 4
+		$connection = DB::connection('mysql');
+		$maior  = " select  ";
+		$maior .= " GREATEST (m.peixe_1, m.peixe_2, m.peixe_3, m.peixe_4, m.peixe_5) as maior_peixe,   m.numero_equipe, m.nome_equipe   ";
+		$maior .= " from medicao m where m.etapa = '4'  order by maior_peixe DESC limit 1 ";
+
+		$etapa4_maior_peixe = $connection->select($maior);
+
+		//etapa 5
+		$connection = DB::connection('mysql');
+		$maior  = " select  ";
+		$maior .= " GREATEST (m.peixe_1, m.peixe_2, m.peixe_3, m.peixe_4, m.peixe_5) as maior_peixe,   m.numero_equipe, m.nome_equipe   ";
+		$maior .= " from medicao m where m.etapa = '5'  order by maior_peixe DESC limit 1 ";
+
+		$etapa5_maior_peixe = $connection->select($maior);
+
+
+		//dd($etapa1_maior_peixe);
+
+		return view('ranking', [
 			'etapa1' => $etapa1,
 			'etapa2' => $etapa2,
 			'etapa3' => $etapa3,
 			'etapa4' => $etapa4,
 			'etapa5' => $etapa5,
+			'etapa1_maior_peixe' => $etapa1_maior_peixe,
+			'etapa2_maior_peixe' => $etapa2_maior_peixe,
+			'etapa3_maior_peixe' => $etapa3_maior_peixe,
+			'etapa4_maior_peixe' => $etapa4_maior_peixe,
+			'etapa5_maior_peixe' => $etapa5_maior_peixe,
 		]);
 	}
 }

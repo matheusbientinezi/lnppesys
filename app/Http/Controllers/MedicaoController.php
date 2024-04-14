@@ -50,17 +50,17 @@ class MedicaoController extends Controller
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
+						"peixe_1" => $row->peixe_1 == "" ? 0 :  $row->peixe_1,
+						"peixe_2" => $row->peixe_2 == "" ? 0 :  $row->peixe_2,
+						"peixe_3" => $row->peixe_3 == "" ? 0 :  $row->peixe_3,
+						"peixe_4" => $row->peixe_4 == "" ? 0 :  $row->peixe_4,
+						"peixe_5" => $row->peixe_5 == "" ? 0 :  $row->peixe_5,
+						"penalidade_1" => $row->penalidade_1 == "" ? 0 : $row->penalidade_1,
+						"penalidade_2" => $row->penalidade_2 == "" ? 0 : $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3 == "" ? 0 : $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4 == "" ? 0 : $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5 == "" ? 0 : $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada == "" ? 0 : $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -74,17 +74,17 @@ class MedicaoController extends Controller
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
+						"peixe_1" => $row->peixe_1 == "" ? 0 :  $row->peixe_1,
+						"peixe_2" => $row->peixe_2 == "" ? 0 :  $row->peixe_2,
+						"peixe_3" => $row->peixe_3 == "" ? 0 :  $row->peixe_3,
+						"peixe_4" => $row->peixe_4 == "" ? 0 :  $row->peixe_4,
+						"peixe_5" => $row->peixe_5 == "" ? 0 :  $row->peixe_5,
+						"penalidade_1" => $row->penalidade_1 == "" ? 0 : $row->penalidade_1,
+						"penalidade_2" => $row->penalidade_2 == "" ? 0 : $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3 == "" ? 0 : $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4 == "" ? 0 : $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5 == "" ? 0 : $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada == "" ? 0 : $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -98,17 +98,17 @@ class MedicaoController extends Controller
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
+						"peixe_1" => $row->peixe_1 == "" ? 0 :  $row->peixe_1,
+						"peixe_2" => $row->peixe_2 == "" ? 0 :  $row->peixe_2,
+						"peixe_3" => $row->peixe_3 == "" ? 0 :  $row->peixe_3,
+						"peixe_4" => $row->peixe_4 == "" ? 0 :  $row->peixe_4,
+						"peixe_5" => $row->peixe_5 == "" ? 0 :  $row->peixe_5,
+						"penalidade_1" => $row->penalidade_1 == "" ? 0 : $row->penalidade_1,
+						"penalidade_2" => $row->penalidade_2 == "" ? 0 : $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3 == "" ? 0 : $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4 == "" ? 0 : $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5 == "" ? 0 : $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada == "" ? 0 : $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -122,17 +122,17 @@ class MedicaoController extends Controller
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
+						"peixe_1" => $row->peixe_1 == "" ? 0 :  $row->peixe_1,
+						"peixe_2" => $row->peixe_2 == "" ? 0 :  $row->peixe_2,
+						"peixe_3" => $row->peixe_3 == "" ? 0 :  $row->peixe_3,
+						"peixe_4" => $row->peixe_4 == "" ? 0 :  $row->peixe_4,
+						"peixe_5" => $row->peixe_5 == "" ? 0 :  $row->peixe_5,
+						"penalidade_1" => $row->penalidade_1 == "" ? 0 : $row->penalidade_1,
+						"penalidade_2" => $row->penalidade_2 == "" ? 0 : $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3 == "" ? 0 : $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4 == "" ? 0 : $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5 == "" ? 0 : $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada == "" ? 0 : $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -146,17 +146,17 @@ class MedicaoController extends Controller
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
+						"peixe_1" => $row->peixe_1 == "" ? 0 :  $row->peixe_1,
+						"peixe_2" => $row->peixe_2 == "" ? 0 :  $row->peixe_2,
+						"peixe_3" => $row->peixe_3 == "" ? 0 :  $row->peixe_3,
+						"peixe_4" => $row->peixe_4 == "" ? 0 :  $row->peixe_4,
+						"peixe_5" => $row->peixe_5 == "" ? 0 :  $row->peixe_5,
+						"penalidade_1" => $row->penalidade_1 == "" ? 0 : $row->penalidade_1,
+						"penalidade_2" => $row->penalidade_2 == "" ? 0 : $row->penalidade_2,
+						"penalidade_3" => $row->penalidade_3 == "" ? 0 : $row->penalidade_3,
+						"penalidade_4" => $row->penalidade_4 == "" ? 0 : $row->penalidade_4,
+						"penalidade_5" => $row->penalidade_5 == "" ? 0 : $row->penalidade_5,
+						"penalidade_chegada" => $row->penalidade_chegada == "" ? 0 : $row->penalidade_chegada,
 						"total" => $row->total,
 						"data" => $row->data
 					]
@@ -379,6 +379,11 @@ class MedicaoController extends Controller
 		$total_penalidades = $penalidade_1 + $penalidade_2 + $penalidade_3 + $penalidade_4 + $penalidade_5 + $penalidade_chegada;
 		$total_desempate = $total_peixes + $peixes[0]['tamanho'];
 
+		$desempate_1 = $peixes[0]['tamanho'];
+		$desempate_2 = $peixes[1]['tamanho'];
+		$desempate_3 = $peixes[2]['tamanho'];
+		$desempate_4 = $peixes[3]['tamanho'];
+
 		$usuario = Auth::user();
 		
 		$update =  " UPDATE medicao SET ";
@@ -387,6 +392,12 @@ class MedicaoController extends Controller
 		$update .= " peixe_3 = ".$peixe_3.", ";
 		$update .= " peixe_4 = ".$peixe_4.", ";
 		$update .= " peixe_5 = ".$peixe_5.", ";
+
+		$update .= " peixe_6 = ".$desempate_1.", ";
+		$update .= " peixe_7 = ".$desempate_2.", ";
+		$update .= " peixe_8 = ".$desempate_3.", ";
+		$update .= " peixe_9 = ".$desempate_4.", ";
+
 		$update .= " penalidade_1 = ".$penalidade_1.", ";
 		$update .= " penalidade_2 = ".$penalidade_2.", ";
 		$update .= " penalidade_3 = ".$penalidade_3.", ";

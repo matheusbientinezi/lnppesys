@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('MediÃ§Ã£o') }}
+            {{ __('Medição') }}
         </h2>
     </x-slot>
 
@@ -9,16 +9,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div id="accordion-collapse" data-accordion="collapse">
-                        {{-- //////////////////////////////////////////////////////////////////////////////////
-						**********************************************************************************
-						ETAPA 1
-						**********************************************************************************
-						////////////////////////////////////////////////////////////////////////////////// --}}
+                    <div id="accordion-collapse" data-accordion="collapsed">
+                    {{-- //////////////////////////////////////////////////////////////////////////////////
+                    **********************************************************************************
+                    ETAPA 1
+                    **********************************************************************************
+                    ////////////////////////////////////////////////////////////////////////////////// --}}
                         <h2 id="accordion-collapse-heading-etapa-1">
                             <button type="button" style="background-color: orange;!"
                                 class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                data-accordion-target="#accordion-collapse-body-etapa-1" aria-expanded="true"
+                                data-accordion-target="#accordion-collapse-body-etapa-1" 
                                 aria-controls="accordion-collapse-body-etapa-1">
                                 <span class="text-3xl font-bold tracking-tight text-gray-900">Etapa 1 - 03/02</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
@@ -29,10 +29,10 @@
                             </button>
                         </h2>
                         <div id="accordion-collapse-body-etapa-1" class="hidden relative overflow-x-auto"
-                            aria-labelledby="accordion-collapse-heading-etapa-1">
+                            aria-labelledby="accordion-collapse-heading-etapa-1" data-accordion="collapsed">
                             <div
                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 relative overflow-x-auto">
-                                <div id="accordion-collapse-1-linha" data-accordion="">
+                                <div>
                                     <table
                                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                         <thead
@@ -51,8 +51,9 @@
                                                         {{ $list1['nome_equipe'] }}
                                                         <div id="accordion-collapse-1-linha-body-{{ $list1['id'] }}"
                                                             class="hidden"
-                                                            aria-labelledby="accordion-collapse-1-linha-heading-{{ $list1['id'] }}">
-                                                            <div
+                                                            >
+                                                            <div aria-labelledby="accordion-collapse-1-linha-body-{{ $list1['id'] }}"
+                                                                data-accordion="collapsed"
                                                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                                                                 <form action="{{ url('insertDadosMedicaoEtapa1') }}"
                                                                     method="POST">
@@ -207,10 +208,9 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="px-6 py-4"
+                                                    <td class="px-6 py-4 hover:bg-gray-500"
                                                         id="accordion-collapse-1-linha-heading-{{ $list1['id'] }}"
                                                         data-accordion-target="#accordion-collapse-1-linha-body-{{ $list1['id'] }}"
-                                                        aria-expanded="true"
                                                         aria-controls="accordion-collapse-1-linha-body-{{ $list1['id'] }}">
                                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -234,8 +234,8 @@
 						////////////////////////////////////////////////////////////////////////////////// --}}
                         <h2 id="accordion-collapse-heading-etapa-2">
                             <button type="button" style="background-color: orange;!"
-                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                data-accordion-target="#accordion-collapse-body-etapa-2" aria-expanded="true"
+                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-etapa-2" 
                                 aria-controls="accordion-collapse-body-etapa-2">
                                 <span class="text-3xl font-bold tracking-tight text-gray-900">Etapa 2 - 20/04</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
@@ -249,7 +249,7 @@
                             aria-labelledby="accordion-collapse-heading-etapa-2">
                             <div
                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 relative overflow-x-auto">
-                                <div id="accordion-collapse-2-linha" data-accordion="collapse">
+                                <div id="accordion-collapse-2-linha" data-accordion="collapsed">
                                     <table
                                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                         <thead
@@ -427,7 +427,7 @@
                                                     <td class="px-6 py-4"
                                                         id="accordion-collapse-2-linha-heading-{{ $list2['id'] }}"
                                                         data-accordion-target="#accordion-collapse-2-linha-body-{{ $list2['id'] }}"
-                                                        aria-expanded="true"
+                                                        
                                                         aria-controls="accordion-collapse-2-linha-body-{{ $list2['id'] }}">
                                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -451,8 +451,8 @@
 						////////////////////////////////////////////////////////////////////////////////// --}}
                         <h2 id="accordion-collapse-heading-etapa-3">
                             <button type="button" style="background-color: orange;!"
-                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                data-accordion-target="#accordion-collapse-body-etapa-3" aria-expanded="true"
+                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-etapa-3" 
                                 aria-controls="accordion-collapse-body-etapa-3">
                                 <span class="text-3xl font-bold tracking-tight text-gray-900">Etapa 3 - 08/06</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
@@ -466,7 +466,7 @@
                             aria-labelledby="accordion-collapse-heading-etapa-3">
                             <div
                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 relative overflow-x-auto">
-                                <div id="accordion-collapse-3-linha" data-accordion="collapse">
+                                <div id="accordion-collapse-3-linha" data-accordion="collapsed">
                                     <table
                                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                         <thead
@@ -644,7 +644,7 @@
                                                     <td class="px-6 py-4"
                                                         id="accordion-collapse-3-linha-heading-{{ $list3['id'] }}"
                                                         data-accordion-target="#accordion-collapse-3-linha-body-{{ $list3['id'] }}"
-                                                        aria-expanded="true"
+                                                        
                                                         aria-controls="accordion-collapse-3-linha-body-{{ $list3['id'] }}">
                                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -668,8 +668,8 @@
 						////////////////////////////////////////////////////////////////////////////////// --}}
                         <h2 id="accordion-collapse-heading-etapa-4">
                             <button type="button" style="background-color: orange;!"
-                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                data-accordion-target="#accordion-collapse-body-etapa-4" aria-expanded="true"
+                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-etapa-4" 
                                 aria-controls="accordion-collapse-body-etapa-4">
                                 <span class="text-3xl font-bold tracking-tight text-gray-900">Etapa 4 - 24/08</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
@@ -683,7 +683,7 @@
                             aria-labelledby="accordion-collapse-heading-etapa-4">
                             <div
                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 relative overflow-x-auto">
-                                <div id="accordion-collapse-4-linha" data-accordion="collapse">
+                                <div id="accordion-collapse-4-linha" data-accordion="collapsed">
                                     <table
                                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                         <thead
@@ -861,7 +861,7 @@
                                                     <td class="px-6 py-4"
                                                         id="accordion-collapse-4-linha-heading-{{ $list4['id'] }}"
                                                         data-accordion-target="#accordion-collapse-4-linha-body-{{ $list4['id'] }}"
-                                                        aria-expanded="true"
+                                                        
                                                         aria-controls="accordion-collapse-4-linha-body-{{ $list4['id'] }}">
                                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -885,8 +885,8 @@
 						////////////////////////////////////////////////////////////////////////////////// --}}
                         <h2 id="accordion-collapse-heading-etapa-5">
                             <button type="button" style="background-color: orange;!"
-                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                data-accordion-target="#accordion-collapse-body-etapa-5" aria-expanded="true"
+                                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-etapa-5" 
                                 aria-controls="accordion-collapse-body-etapa-5">
                                 <span class="text-3xl font-bold tracking-tight text-gray-900">Etapa 5 - 19/10</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
@@ -900,7 +900,7 @@
                             aria-labelledby="accordion-collapse-heading-etapa-5">
                             <div
                                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 relative overflow-x-auto">
-                                <div id="accordion-collapse-5-linha" data-accordion="collapse">
+                                <div id="accordion-collapse-5-linha" data-accordion="collapsed">
                                     <table
                                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                         <thead
@@ -1078,7 +1078,7 @@
                                                     <td class="px-6 py-4"
                                                         id="accordion-collapse-5-linha-heading-{{ $list5['id'] }}"
                                                         data-accordion-target="#accordion-collapse-5-linha-body-{{ $list5['id'] }}"
-                                                        aria-expanded="true"
+                                                        
                                                         aria-controls="accordion-collapse-5-linha-body-{{ $list5['id'] }}">
                                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
