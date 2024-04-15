@@ -377,12 +377,12 @@ class MedicaoController extends Controller
 
 		$total_peixes = $peixes[1]['tamanho'] + $peixes[2]['tamanho'] + $peixes[3]['tamanho'] + $peixes[4]['tamanho'];
 		$total_penalidades = $penalidade_1 + $penalidade_2 + $penalidade_3 + $penalidade_4 + $penalidade_5 + $penalidade_chegada;
-		$total_desempate = $total_peixes + $peixes[0]['tamanho'];
+		$total_desempate = $peixes[0]['tamanho'];
 
-		$desempate_1 = $peixes[0]['tamanho'];
-		$desempate_2 = $peixes[1]['tamanho'];
+		$desempate_1 = $peixes[4]['tamanho'];
+		$desempate_2 = $peixes[3]['tamanho'];
 		$desempate_3 = $peixes[2]['tamanho'];
-		$desempate_4 = $peixes[3]['tamanho'];
+		$desempate_4 = $peixes[1]['tamanho'];
 
 		$usuario = Auth::user();
 		
