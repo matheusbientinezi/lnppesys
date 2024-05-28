@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/gerarPDFmedicao', [App\Http\Controllers\PdfController::class, 'gerarPDFmedicao' ] )->name('pdf.medicao');
 
     Route::get('/ranking', [App\Http\Controllers\RankingController::class, 'index'])->name('ranking');
+    Route::get('/rankinggeral', [App\Http\Controllers\RankingGeralController::class, 'index'])->name('rankinggeral');
 
     Route::get('/registrar',function (){
         return view('register');
@@ -50,5 +51,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/rankingpublic', [App\Http\Controllers\RankingPublicController::class, 'index'])->name('rankingpublic');
+Route::get('/rankinggeralpublic', [App\Http\Controllers\RankingGeralPublicController::class, 'index'])->name('rankinggeralpublic');
 
 require __DIR__.'/auth.php';

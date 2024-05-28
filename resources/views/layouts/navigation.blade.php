@@ -30,6 +30,11 @@
                         {{ __('Ranking Etapa') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('rankinggeral')" :active="request()->routeIs('rankinggeral')">
+                        {{ __('Ranking Geral') }}
+                    </x-nav-link>
+                </div>
                 @endif
             </div>
             
@@ -109,6 +114,10 @@
 
             <x-responsive-nav-link :href="route('ranking')" :active="request()->routeIs('ranking')">
                 {{ __('Ranking Etapa') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('rankinggeral')" :active="request()->routeIs('rankinggeral')">
+                {{ __('Ranking Geral') }}
             </x-responsive-nav-link>
 
         </div>
