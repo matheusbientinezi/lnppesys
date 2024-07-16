@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 
@@ -63,140 +64,164 @@ class RankingController extends Controller
 
 		foreach ($result as $key => $row) {
 			if ($row->etapa == '1') {
-				$count_etapa_1++;
-				array_push(
-					$etapa1,
-					[
-						"id" => $row->id,
-                        "posicao" => $count_etapa_1,
-						"numero_equipe" => $row->numero_equipe,
-						"nome_equipe"   => $row->nome_equipe,
-						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
-						"total" => $row->total,
-                        "total_desempate" => $row->total_desempate,
-						"data" => $row->data
-					]
-				);
-				
+				$dataParaValidar = '03/02/2024';
+				$dataAtual = new DateTime();
+				$dataValidacao = DateTime::createFromFormat('d/m/Y', $dataParaValidar);
+				if($dataValidacao < $dataAtual){
+					$count_etapa_1++;
+					array_push(
+						$etapa1,
+						[
+							"id" => $row->id,
+							"posicao" => $count_etapa_1,
+							"numero_equipe" => $row->numero_equipe,
+							"nome_equipe"   => $row->nome_equipe,
+							"etapa"         => $row->etapa,
+							"peixe_1" => $row->peixe_1,
+							"peixe_2" => $row->peixe_2,
+							"peixe_3" => $row->peixe_3,
+							"peixe_4" => $row->peixe_4,
+							"peixe_5" => $row->peixe_5,
+							"penalidade_1" => $row->penalidade_1,
+							"penalidade_2" => $row->penalidade_2,
+							"penalidade_3" => $row->penalidade_3,
+							"penalidade_4" => $row->penalidade_4,
+							"penalidade_5" => $row->penalidade_5,
+							"penalidade_chegada" => $row->penalidade_chegada,
+							"total" => $row->total,
+							"total_desempate" => $row->total_desempate,
+							"data" => $row->data
+						]
+					);
+				}
 			}
 			if ($row->etapa == '2') {
-				$count_etapa_2++;
-				array_push(
-					$etapa2, 
-					[
-						"id" => $row->id,
-                        "posicao" => $count_etapa_2,
-						"numero_equipe" => $row->numero_equipe,
-						"nome_equipe"   => $row->nome_equipe,
-						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
-						"total" => $row->total,
-                        "total_desempate" => $row->total_desempate,
-						"data" => $row->data
-					]
-				);
+				$dataParaValidar = '20/04/2024';
+				$dataAtual = new DateTime();
+				$dataValidacao = DateTime::createFromFormat('d/m/Y', $dataParaValidar);
+				if($dataValidacao < $dataAtual){
+					$count_etapa_2++;
+					array_push(
+						$etapa2, 
+						[
+							"id" => $row->id,
+							"posicao" => $count_etapa_2,
+							"numero_equipe" => $row->numero_equipe,
+							"nome_equipe"   => $row->nome_equipe,
+							"etapa"         => $row->etapa,
+							"peixe_1" => $row->peixe_1,
+							"peixe_2" => $row->peixe_2,
+							"peixe_3" => $row->peixe_3,
+							"peixe_4" => $row->peixe_4,
+							"peixe_5" => $row->peixe_5,
+							"penalidade_1" => $row->penalidade_1,
+							"penalidade_2" => $row->penalidade_2,
+							"penalidade_3" => $row->penalidade_3,
+							"penalidade_4" => $row->penalidade_4,
+							"penalidade_5" => $row->penalidade_5,
+							"penalidade_chegada" => $row->penalidade_chegada,
+							"total" => $row->total,
+							"total_desempate" => $row->total_desempate,
+							"data" => $row->data
+						]
+					);
+				}
 			}
 			if ($row->etapa == '3') {
-				$count_etapa_3++;
-				array_push(
-					$etapa3, 
-					[
-						"id" => $row->id,
-                        "posicao" => $count_etapa_3,
-						"numero_equipe" => $row->numero_equipe,
-						"nome_equipe"   => $row->nome_equipe,
-						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
-						"total" => $row->total,
-                        "total_desempate" => $row->total_desempate,
-						"data" => $row->data
-					]
-				);
+				$dataParaValidar = '08/06/2024';
+				$dataAtual = new DateTime();
+				$dataValidacao = DateTime::createFromFormat('d/m/Y', $dataParaValidar);
+				if($dataValidacao < $dataAtual){
+					$count_etapa_3++;
+					array_push(
+						$etapa3, 
+						[
+							"id" => $row->id,
+							"posicao" => $count_etapa_3,
+							"numero_equipe" => $row->numero_equipe,
+							"nome_equipe"   => $row->nome_equipe,
+							"etapa"         => $row->etapa,
+							"peixe_1" => $row->peixe_1,
+							"peixe_2" => $row->peixe_2,
+							"peixe_3" => $row->peixe_3,
+							"peixe_4" => $row->peixe_4,
+							"peixe_5" => $row->peixe_5,
+							"penalidade_1" => $row->penalidade_1,
+							"penalidade_2" => $row->penalidade_2,
+							"penalidade_3" => $row->penalidade_3,
+							"penalidade_4" => $row->penalidade_4,
+							"penalidade_5" => $row->penalidade_5,
+							"penalidade_chegada" => $row->penalidade_chegada,
+							"total" => $row->total,
+							"total_desempate" => $row->total_desempate,
+							"data" => $row->data
+						]
+					);
+				}
 			}
 			if ($row->etapa == '4') {
-				$count_etapa_4++;
-				array_push(
-					$etapa4, 
-					[
-						"id" => $row->id,
-                        "posicao" => $count_etapa_4,
-						"numero_equipe" => $row->numero_equipe,
-						"nome_equipe"   => $row->nome_equipe,
-						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
-						"total" => $row->total,
-                        "total_desempate" => $row->total_desempate,
-						"data" => $row->data
-					]
-				);
+				$dataParaValidar = '24/08/2024';
+				$dataAtual = new DateTime();
+				$dataValidacao = DateTime::createFromFormat('d/m/Y', $dataParaValidar);
+				if($dataValidacao < $dataAtual){
+					$count_etapa_4++;
+					array_push(
+						$etapa4, 
+						[
+							"id" => $row->id,
+							"posicao" => $count_etapa_4,
+							"numero_equipe" => $row->numero_equipe,
+							"nome_equipe"   => $row->nome_equipe,
+							"etapa"         => $row->etapa,
+							"peixe_1" => $row->peixe_1,
+							"peixe_2" => $row->peixe_2,
+							"peixe_3" => $row->peixe_3,
+							"peixe_4" => $row->peixe_4,
+							"peixe_5" => $row->peixe_5,
+							"penalidade_1" => $row->penalidade_1,
+							"penalidade_2" => $row->penalidade_2,
+							"penalidade_3" => $row->penalidade_3,
+							"penalidade_4" => $row->penalidade_4,
+							"penalidade_5" => $row->penalidade_5,
+							"penalidade_chegada" => $row->penalidade_chegada,
+							"total" => $row->total,
+							"total_desempate" => $row->total_desempate,
+							"data" => $row->data
+						]
+					);
+				}
 			}
 			if ($row->etapa == '5') {
-				$count_etapa_5++;
-				array_push(
-					$etapa5, 
-					[
-						"id" => $row->id,
-                        "posicao" => $count_etapa_5,
-						"numero_equipe" => $row->numero_equipe,
-						"nome_equipe"   => $row->nome_equipe,
-						"etapa"         => $row->etapa,
-						"peixe_1" => $row->peixe_1,
-						"peixe_2" => $row->peixe_2,
-						"peixe_3" => $row->peixe_3,
-						"peixe_4" => $row->peixe_4,
-						"peixe_5" => $row->peixe_5,
-						"penalidade_1" => $row->penalidade_1,
-						"penalidade_2" => $row->penalidade_2,
-						"penalidade_3" => $row->penalidade_3,
-						"penalidade_4" => $row->penalidade_4,
-						"penalidade_5" => $row->penalidade_5,
-						"penalidade_chegada" => $row->penalidade_chegada,
-						"total" => $row->total,
-                        "total_desempate" => $row->total_desempate,
-						"data" => $row->data
-					]
-				);
+				$dataParaValidar = '19/10/2024';
+				$dataAtual = new DateTime();
+				$dataValidacao = DateTime::createFromFormat('d/m/Y', $dataParaValidar);
+				if($dataValidacao < $dataAtual){
+					$count_etapa_5++;
+					array_push(
+						$etapa5, 
+						[
+							"id" => $row->id,
+							"posicao" => $count_etapa_5,
+							"numero_equipe" => $row->numero_equipe,
+							"nome_equipe"   => $row->nome_equipe,
+							"etapa"         => $row->etapa,
+							"peixe_1" => $row->peixe_1,
+							"peixe_2" => $row->peixe_2,
+							"peixe_3" => $row->peixe_3,
+							"peixe_4" => $row->peixe_4,
+							"peixe_5" => $row->peixe_5,
+							"penalidade_1" => $row->penalidade_1,
+							"penalidade_2" => $row->penalidade_2,
+							"penalidade_3" => $row->penalidade_3,
+							"penalidade_4" => $row->penalidade_4,
+							"penalidade_5" => $row->penalidade_5,
+							"penalidade_chegada" => $row->penalidade_chegada,
+							"total" => $row->total,
+							"total_desempate" => $row->total_desempate,
+							"data" => $row->data
+						]
+					);
+				}
 			}
 		};
 
