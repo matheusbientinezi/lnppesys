@@ -15,6 +15,12 @@ class RankingPublicController extends Controller
 		$etapa4 = [];
 		$etapa5 = [];
 
+		$count_etapa_1 = 0;
+		$count_etapa_2 = 0;
+		$count_etapa_3 = 0;
+		$count_etapa_4 = 0;
+		$count_etapa_5 = 0;
+
 		$etapa1_maior_peixe = [];
 		$etapa2_maior_peixe = [];
 		$etapa3_maior_peixe = [];
@@ -57,11 +63,12 @@ class RankingPublicController extends Controller
 
 		foreach ($result as $key => $row) {
 			if ($row->etapa == '1') {
+				$count_etapa_1++;
 				array_push(
 					$etapa1,
 					[
 						"id" => $row->id,
-                        "posicao" => $key+1,
+                        "posicao" => $count_etapa_1,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -84,11 +91,12 @@ class RankingPublicController extends Controller
 				
 			}
 			if ($row->etapa == '2') {
+				$count_etapa_2++;
 				array_push(
 					$etapa2, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key+1,
+                        "posicao" => $count_etapa_2,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -110,11 +118,12 @@ class RankingPublicController extends Controller
 				);
 			}
 			if ($row->etapa == '3') {
+				$count_etapa_3++;
 				array_push(
 					$etapa3, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key+1,
+                        "posicao" => $count_etapa_3,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -136,11 +145,12 @@ class RankingPublicController extends Controller
 				);
 			}
 			if ($row->etapa == '4') {
+				$count_etapa_4++;
 				array_push(
 					$etapa4, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key+1,
+                        "posicao" => $count_etapa_4,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
@@ -162,11 +172,12 @@ class RankingPublicController extends Controller
 				);
 			}
 			if ($row->etapa == '5') {
+				$count_etapa_5++;
 				array_push(
 					$etapa5, 
 					[
 						"id" => $row->id,
-                        "posicao" => $key+1,
+                        "posicao" => $count_etapa_5,
 						"numero_equipe" => $row->numero_equipe,
 						"nome_equipe"   => $row->nome_equipe,
 						"etapa"         => $row->etapa,
